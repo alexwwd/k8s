@@ -1,0 +1,10 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: managed-nfs-storage
+#---provisioner 需要和 NFS-Provisioner 服务提供者提供的配置的保持一致---
+  namespace: default
+provisioner: fuseim.pri/ifs 
+#allowVolumeExpansion: true
+parameters:
+  archiveOnDelete: "false"
